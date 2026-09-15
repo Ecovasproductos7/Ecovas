@@ -229,9 +229,9 @@ const botTopics = {
     waText: 'Hola, quiero saber más sobre la línea Cuidado Personal'
   },
   estetica: {
-    label: 'Estética',
+    label: 'Línea Estética',
     reply: 'Nuestra línea Estética incluye el extracto líquido adelgazante para abdomen y la crema exfoliante Celubell, pensada para el cuidado corporal. ¿Seguimos por WhatsApp para ver presentaciones y precios?',
-    waText: 'Hola, quiero saber más sobre la línea Estética'
+    waText: 'Hola, quiero saber más sobre Línea Estética'
   },
   mascotas: {
     label: 'Tinoorine Mascotas',
@@ -239,9 +239,9 @@ const botTopics = {
     waText: 'Hola, quiero saber más sobre Tinoorine Mascotas'
   },
   ambientadores: {
-    label: 'EcoFresh Ambientadores',
-    reply: 'EcoFresh Ambientadores tiene 6 fragancias (Maracuyá, Bebé, Vainilla, Chicle, Bambú y Canela) en presentación de 60 ml. ¿Seguimos por WhatsApp para ver precios?',
-    waText: 'Hola, quiero saber más sobre EcoFresh Ambientadores'
+    label: 'Ambientadores Ecofresh',
+    reply: 'Ambientadores Ecofresh tiene 6 fragancias (Maracuyá, Bebé, Vainilla, Chicle, Bambú y Canela) en presentación de 60 ml. ¿Seguimos por WhatsApp para ver precios?',
+    waText: 'Hola, quiero saber más sobre Ambientadores Ecofresh'
   }
 };
 
@@ -323,8 +323,10 @@ function updateCartWhatsappLink() {
     cartWhatsappBtn.href = 'https://wa.me/573103336061?text=' + encodeURIComponent('Hola, quiero hacer un pedido de productos ECOVAS.');
     return;
   }
-  let text = 'Hola, quiero hacer el siguiente pedido de productos ECOVAS:\n';
-  cart.forEach(item => { text += `- ${item.name} x${item.qty}\n`; });
+  let text = 'Hola, quiero hacer el siguiente pedido de productos\n';
+  cart.forEach(item => {
+    text += `${item.name} x${item.qty}\n`;
+  });
   text += 'Por favor confírmenme disponibilidad y precio.';
   cartWhatsappBtn.href = 'https://wa.me/573103336061?text=' + encodeURIComponent(text);
 }
